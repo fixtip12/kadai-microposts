@@ -6,7 +6,7 @@
             @include('users.card', ['user' => $user])
         </aside>
         <div class="col-sm-8">
-            @include('users.navtabs', ['user' => $user])
+            @include('users.navtabs', ['user' => $user,'microposts' => $microposts])
             @if (Auth::id() == $user->id)
                 {!! Form::open(['route' => 'microposts.store']) !!}
                     <div class="form-group">
