@@ -9,6 +9,9 @@
               <div>
                   <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                   @include('user_favorite.favorite_button', ['micropost' => $micropost])
+                  @if (Auth::id() == $micropost->user_id)
+                     <a href="{{route('microposts.edit',['id' => $micropost->id])}}"class="btn btn-primary btn-warning">編集</a>
+                  @endif
               </div>
           </div>
       </li>
